@@ -5,14 +5,14 @@ pipeline {
   }
   agent {
     docker {
-      image 'sqitch/sqitch'
+      image 'mgibio/sqitch-mysql'
       args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
     }
   }
   stages {
     stage('Installing Latest snowsql') {
         steps {
-            sh label: '', script: '''sudo apt-get install -y sqitch'''
+            sh 'snowsql --help'
         }
     }
     stage('Deploy changes') {
