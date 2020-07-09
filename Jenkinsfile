@@ -5,14 +5,14 @@ pipeline {
   }
   agent {
     docker {
-      image 'hashmapinc/sqitch:snowflake-dev'
+      image 'sqitch/sqitch'
       args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
     }
   }
   stages {
     stage('Installing Latest snowsql') {
         steps {
-            sh 'snowsql --help'
+            sh label: '', script: '''sudo apt-get install -y sqitch'''
         }
     }
     stage('Deploy changes') {
