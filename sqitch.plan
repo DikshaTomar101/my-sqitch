@@ -3,3 +3,4 @@
 %uri=https://github.com/DikshaTomar101/my-sqitch.git
 
 appuser 2020-07-09T10:08:49Z diksha <ubuntu@ip-172-31-32-147> # Creates a an application user.
+users [appuser] 2020-07-09T10:37:23Z diksha <ubuntu@ip-172-31-32-147> # Creates table to track our users.
