@@ -2,13 +2,7 @@
     options {
       timeout(time: 1, unit: 'HOURS') 
   }
-  agent {
-    docker {
-      image 'mgibio/sqitch-mysql'
-      args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
-      label 'my-label'
-    }
-  }
+  agent any
   stages {
     stage('Installing Latest snowsql') {
         steps {
@@ -18,21 +12,21 @@
     stage('Deploy changes') {
       steps {
           sh '''
-              sqitch deploy "db:mysql://root@/flipr_test"
+              sudo sqitch deploy "db:mysql://root@/flipr_test"
               '''           
         }
       }
     stage('Verify changes') {
       steps {
           sh '''
-              sqitch verify "db:mysql://root@/flipr_test"
+              sudo sqitch verify "db:mysql://root@/flipr_test"
               ''' 
         }
       }
     }  
 post {
     always {
-      sh 'chmod -R 777 .'
+      sh 'sudo chmod -R 777 .'
     }
   }
  }
