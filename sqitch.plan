@@ -8,3 +8,4 @@ users [appuser] 2020-07-09T10:37:23Z diksha <ubuntu@ip-172-31-32-147> # Creates 
 
 newuser 2020-07-10T09:48:10Z diksha <ubuntu@ip-172-31-32-147> # Creates a an application user.
 new 2020-07-10T10:00:29Z diksha <ubuntu@ip-172-31-32-147> # Creates a an application user.
+newuser2 2020-07-10T10:12:30Z diksha <ubuntu@ip-172-31-32-147> # Creates a an application user.
