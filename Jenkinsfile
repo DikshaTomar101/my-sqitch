@@ -21,7 +21,6 @@
               '''           
         }
       }
-    }
     stage('Verify changes') {
       steps {
           sh '''
@@ -29,9 +28,10 @@
               ''' 
         }
       }
-    }        
+    }  
 post {
     always {
       sh 'chmod -R 777 .'
     }
   }
+ }
