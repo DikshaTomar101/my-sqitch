@@ -4,11 +4,6 @@
   }
   agent any
   stages {
-    stage('Installing Latest snowsql') {
-        steps {
-            sh 'snowsql --help'
-        }
-    }
     stage('Deploy changes') {
       steps {
           sh '''
