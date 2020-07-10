@@ -7,14 +7,14 @@
     stage('Deploy changes') {
       steps {
           sh '''
-              sudo sqitch deploy "db:mysql://root@/flipr_test"
+              sudo sqitch deploy "db:mysql://root@52.91.84.207/flipr_test"
               '''           
         }
       }
     stage('Verify changes') {
       steps {
           sh '''
-              sudo sqitch verify "db:mysql://root@/flipr_test"
+              sudo sqitch verify "db:mysql://root@52.91.84.207/flipr_test"
               ''' 
         }
       }
